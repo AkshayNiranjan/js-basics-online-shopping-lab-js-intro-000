@@ -24,10 +24,10 @@ function viewCart() {
   if(cart.length==1){
     return `${str}.`
   }
-  for(let i=1;i<cart.length;i++){
-    str=`${str}${i<cart.length-1?`, ${cart[i].itemName} at \$${cart[i].itemPrice}`:`, and ${cart[i].itemName} at \$${cart[i].itemPrice}.`}`
+  for(let i=1;i<cart.length-1;i++){
+    str=`${str}, ${cart[i].itemName} at \$${cart[i].itemPrice}`
   }
-  return str
+  return `${str}, and ${cart[cart.length-1].itemName} at \$${cart[cart.length-1].itemPrice}.`
 }
 
 function total() {
