@@ -21,13 +21,14 @@ function viewCart() {
     return 'Your shopping cart is empty.'
   }
   var str=`In your cart, you have ${cart[0].itemName} at \$${cart[0].itemPrice}`
+  var end=cart.length-1
   if(cart.length==1){
     return `${str}.`
   }
-  for(let i=1;i<cart.length-1;i++){
+  for(let i=1;i<end;i++){
     str=`${str}, ${cart[i].itemName} at \$${cart[i].itemPrice}`
   }
-  return `${str}, and ${cart[cart.length-1].itemName} at \$${cart[cart.length-1].itemPrice}.`
+  return `${str}, and ${cart[end].itemName} at \$${cart[end].itemPrice}.`
 }
 
 function total() {
